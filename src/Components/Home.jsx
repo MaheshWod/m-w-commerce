@@ -3,8 +3,8 @@ import React from 'react'
 import NavLayout from './NavLayout'
 import Swal from 'sweetalert2'
 import firebaseAppConfig from '../util/firebase-config'
-import { getFirestore,addDoc,collection,getDocs } from 'firebase/firestore'
-import { onAuthStateChanged,getAuth } from 'firebase/auth'
+import { getFirestore, addDoc, collection, getDocs } from 'firebase/firestore'
+import { onAuthStateChanged, getAuth } from 'firebase/auth'
 
 const db = getFirestore(firebaseAppConfig)
 const auth = getAuth(firebaseAppConfig)
@@ -13,50 +13,48 @@ const Home = () => {
   const [product, setProduct] = useState([])
   const [session, setSession] = useState(null)
 
-    useEffect(()=>{
-        onAuthStateChanged(auth, (user)=>{
-            if(user)
-            {
-                setSession(user)
-            }
-            else {
-                setSession(null)
-            }
-        })
-    },[])
-
-    useEffect(()=>{
-      const req = async()=>{
- const snapshot = await getDocs(collection(db,"products"))
- const temp = []
-snapshot.forEach((doc)=>{
-  const allProducts= doc.data()
-  allProducts.id = doc.id
-  // console.log(allProducts)
-  temp.push(allProducts)
-})
- setProduct(temp)
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setSession(user)
       }
-      req()
+      else {
+        setSession(null)
+      }
     })
+  }, [])
 
-    const addToCart = async (item)=>{
-      try {
-          item.userId = session.uid
-          await addDoc(collection(db, "carts"), item)
-          new Swal({
-              icon: 'success',
-              title: 'Product Added !'
-          })
-      }
-      catch(err)
-      {
-          new Swal({
-              icon: 'error',
-              title: 'Failed !',
-              text: err.message
-          })
-      }
+  useEffect(() => {
+    const req = async () => {
+      const snapshot = await getDocs(collection(db, "products"))
+      const temp = []
+      snapshot.forEach((doc) => {
+        const allProducts = doc.data()
+        allProducts.id = doc.id
+        // console.log(allProducts)
+        temp.push(allProducts)
+      })
+      setProduct(temp)
+    }
+    req()
+  })
+
+  const addToCart = async (item) => {
+    try {
+      item.userId = session.uid
+      await addDoc(collection(db, "carts"), item)
+      new Swal({
+        icon: 'success',
+        title: 'Product Added !'
+      })
+    }
+    catch (err) {
+      new Swal({
+        icon: 'error',
+        title: 'Failed !',
+        text: err.message
+      })
+    }
   }
 
   return (
@@ -86,8 +84,8 @@ snapshot.forEach((doc)=>{
                       <label className="text-grey-600">({items.discount}% off)</label>
                     </div>
                     <button className="w-full bg-green-500 rounded p-2 my-2 hover:bg-green-900 hover:text-white">Buy Now</button>
-                    <button onClick={()=>addToCart(items)}
-                    className="w-full bg-orange-500 rounded p-2 mt-2 hover:bg-orange-900 hover:text-white">Add to Cart</button>
+                    <button onClick={() => addToCart(items)}
+                      className="w-full bg-orange-500 rounded p-2 mt-2 hover:bg-orange-900 hover:text-white">Add to Cart</button>
                   </div>
                 </div>
               ))
