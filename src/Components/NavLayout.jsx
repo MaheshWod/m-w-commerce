@@ -188,15 +188,15 @@ const NavLayout = ({ children }) => {
 
                     <div >
                         <h1 className='text-black font-semibold md:text-2xl text-[18px] md:mb-3 mb-2'>Website Links</h1>
-                        <ul className='md:space-y-2 space-y-[0px] flex flex-col items-start  '>
+                        <ul className='md:space-y-2 space-y-[0px] flex flex-col items-start px-2  '>
                             {menus.map((item, index) => (
                                 <li key={index} className="inline-block hover:bg-stone-500  rounded py-1 hover:px-2 hover:text-white">
                                     <Link 
                                     to={item.href}>{item.label}</Link>
                                 </li>
                             ))}
-                            <li className='hover:bg-stone-500 hover:px-2 rounded hover:text-white' ><Link to={'/login'}>Login</Link></li>
-                            <li className='hover:bg-stone-500 hover:px-2 rounded hover:text-white'><Link to={'navlayout/signup'}>SignUp</Link></li>
+                            <li className='hover:bg-stone-500 hover:px-2 rounded hover:text-white ' ><Link to={'/login'}>Login</Link></li>
+                            <li className='hover:bg-stone-500 hover:px-2 rounded hover:text-white '><Link to={'navlayout/signup'}>SignUp</Link></li>
                         </ul>
                     </div>
 

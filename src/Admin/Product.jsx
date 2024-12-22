@@ -231,12 +231,12 @@ const handleEditProduct = async (e) => {
   return (
     <Layout>
       <div>
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center gap-4">
           <h1 className="text-xl font-semibold  md:mb-4">Products</h1>
           
           <button className="bg-indigo-600 text-white rounded md:py-2 md:px-4 px-2 hover:bg-green-600" onClick={handleNewProductClick}>
-             <div className='flex md:my-2 my-1 '><MdAddShoppingCart className=" mt-1" />
-             <h3>New Product</h3></div>
+             <div className='flex md:my-2 px-1 justify-center items-center  '><MdAddShoppingCart className=" mt-1 my-2" />
+             <h3 className='text-[14px]'>New Product</h3></div>
           </button>
         </div>
 

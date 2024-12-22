@@ -61,7 +61,7 @@ const Home = () => {
     <>
       <NavLayout>
         <div className="overflow-x-hidden">
-          <img className="md:h-[500px] md:w-full object-cover " src='/potrait.jpg' alt='home' />
+          <img className="md:h-[500px] h-[150px]  md:w-full object-fill  " src='/potrait.jpg' alt='home' />
         </div>
 
         {/* Yasma Product section */}
@@ -73,12 +73,12 @@ const Home = () => {
           <div className="md:w-11/12  grid md:grid-cols-4 grid-cols-1 gap-6 md:gap-12 mx-auto">
             {
               product.map((items, index) => (
-                <div key={index} className="bg-white rounded-md shadow-lg overflow-hidden">
-                  <img src={items.imageUrl} className="rounded-t-md h-[300px] md:h-[400px] w-full object-cover px-2" alt={items.title} />
+                <div key={index} className="bg-white rounded-md shadow-lg overflow-hidden px-2 py-2">
+                  <img src={items.imageUrl} className="rounded-t-md h-[280px] md:h-[400px] w-full object-cover  " alt={items.title} />
                   <div className="p-4">
                     <h1 className="font-semibold text-md">{items.title}</h1>
                     <p className="text-grey-600">{items.description.slice(0, 20)}...</p>
-                    <div className="flex gap-2 mt-2">
+                    <div className="flex gap-3 mt-2">
                       <label className='font-bold'>${items.price - (items.price * items.discount) / 100}</label>
                       <del className="font-semibold text-red-400">${items.price}</del>
                       <label className="text-grey-600">({items.discount}% off)</label>
