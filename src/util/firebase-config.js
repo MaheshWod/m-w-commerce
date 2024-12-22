@@ -37,25 +37,63 @@
 // export default firebaseAppConfig;
 
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app"
+// import { initializeApp } from "firebase/app"
+// // TODO: Add SDKs for Firebase products that you want to use
+// // https://firebase.google.com/docs/web/setup#available-libraries
+
+// // Your web app's Firebase configuration
+// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// const firebaseConfig = {
+//   apiKey: "AIzaSyA-vcNxMOd8WcXsO8Z7zTQ-S5PT-sxBlqo",
+//   authDomain: "ecommerce-220f4.firebaseapp.com",
+//   projectId: "ecommerce-220f4",
+//   storageBucket: "ecommerce-220f4.firebasestorage.app",
+//   messagingSenderId: "503282047506",
+//   appId: "1:503282047506:web:1ae017f3a7c83cfab356cb",
+//   measurementId: "G-TPVS543YRD"
+// };
+
+// // Initialize Firebase
+// const firebaseAppConfig = initializeApp(firebaseConfig);
+// export default firebaseAppConfig;
+
+
+
+// Import the functions you need from the SDKs you need
+// import { initializeApp } from "firebase/app";
+// // TODO: Add SDKs for Firebase products that you want to use
+// // https://firebase.google.com/docs/web/setup#available-libraries
+
+// // Your web app's Firebase configuration
+// const firebaseConfig = {
+//   apiKey: "AIzaSyCGEz4lDi6uhh7LwOy0myFQmzj7ewnjfTY",
+//   authDomain: "m-commerce-a1ee1.firebaseapp.com",
+//   projectId: "m-commerce-a1ee1",
+//   storageBucket: "m-commerce-a1ee1.firebasestorage.app",
+//   messagingSenderId: "841282712280",
+//   appId: "1:841282712280:web:3ef937ec7befe77bd35dad"
+// };
+
+// // Initialize Firebase
+// const firebaseAppConfig = initializeApp(firebaseConfig);
+// export default firebaseAppConfig;
+
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyA-vcNxMOd8WcXsO8Z7zTQ-S5PT-sxBlqo",
-  authDomain: "ecommerce-220f4.firebaseapp.com",
-  projectId: "ecommerce-220f4",
-  storageBucket: "ecommerce-220f4.firebasestorage.app",
-  messagingSenderId: "503282047506",
-  appId: "1:503282047506:web:1ae017f3a7c83cfab356cb",
-  measurementId: "G-TPVS543YRD"
+  apiKey: "AIzaSyDsAkVu1R5-s8jAa9gRijnro5U2gSVov2E",
+  authDomain: "mw-commerce.firebaseapp.com",
+  projectId: "mw-commerce",
+  storageBucket: "mw-commerce.firebasestorage.app",
+  messagingSenderId: "821713363011",
+  appId: "1:821713363011:web:378f70a971cf0f61b4b4f6"
 };
 
 // Initialize Firebase
 const firebaseAppConfig = initializeApp(firebaseConfig);
 export default firebaseAppConfig;
-
-
-

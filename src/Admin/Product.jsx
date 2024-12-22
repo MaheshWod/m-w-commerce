@@ -244,10 +244,10 @@ const handleEditProduct = async (e) => {
 
           {
             products.map((item, index) => ( 
-            <div key={index} className="bg-white rounded-md shadow-lg ">
+            <div key={index} className="bg-white rounded-md shadow-lg  ">
               <div className="relative">
                 {item.imageUrl ? (
-                  <img src={item.imageUrl} alt={item.title || "Product"} className="rounded-t-md md:h-[400px] h-[300px] px-2 w-full object-cover" />
+                  <img src={item.imageUrl} alt={item.title || "Product"} className="rounded-t-md md:h-[400px] h-[300px] px-2 py-2 w-full object-cover" />
                 ) : (
                   <div className="md:h-[400px] h-[300px] w-full bg-gray-300 flex items-center justify-center">
                     <span>Upload Image</span>
