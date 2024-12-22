@@ -84,7 +84,7 @@ const Profile = () => {
             }
         }
         req()
-    },[addressFormValue,session,isUpdated])
+    },[addressFormValue,formValue,session,isUpdated])
 
     // console.log(session)
     
