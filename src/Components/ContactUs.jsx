@@ -40,12 +40,12 @@ const ContactUs = () => {
   return (
     <>
       <NavLayout>
-        <div className="flex flex-col md:w-6/12 md:h-screen md:mx-auto mx-2 md:mt-4 py-4">
-          <div className="md:w-full md:h-2/6 w-screen h-36">
-            <img src="/k.jpg" className="w-full h-full object-cover" alt="Contact Banner" />
+        <div className="grid md:grid-cols-2 grid-cols-1 md:w-10/12  md:mx-auto mx-2 md:my-8 md:p-4 my-3 p-2  gap-4 border shadow-lg rounded-lg">
+          <div className="md:w-full md:h-full w-screen h-36">
+            <img src="/contactjpg.jpg" className="w-full h-full object-cover rounded-lg" alt="Contact Banner" />
           </div>
           <div>
-            <form onSubmit={contactformvalue} className="md:mt-8 space-y-6">
+            <form onSubmit={contactformvalue} className=" space-y-6 my-4 gap-2">
               <div className="flex flex-col mt-1">
                 <label className="md:font-semibold md:text-lg mb-1">Full Name</label>
                 <input
@@ -55,7 +55,7 @@ const ContactUs = () => {
                   type="text"
                   value={formValue.FullName}
                   placeholder="Enter your name"
-                  className="p-3 border border-grey-600 rounded"
+                  className="md:p-3 p-1 border border-grey-600 rounded"
                 />
               </div>
               <div className="flex flex-col mt-1">
@@ -67,7 +67,7 @@ const ContactUs = () => {
                   type="email"
                   value={formValue.email}
                   placeholder="Enter your Email"
-                  className="p-3 border border-grey-600 rounded"
+                  className="md:p-3 p-1 border border-grey-600 rounded"
                 />
               </div>
               <div className="flex flex-col mt-1">
@@ -78,7 +78,7 @@ const ContactUs = () => {
                   name="message"
                   value={formValue.message}
                   placeholder="Enter your message"
-                  className="p-3 border border-grey-600 rounded"
+                  className="md:p-3 p-1 border border-grey-600 rounded"
                 />
               </div>
               <button

@@ -4,6 +4,8 @@ import { useState } from "react"
 import firebaseAppConfig from "../util/firebase-config"
 import { signInWithEmailAndPassword, getAuth } from "firebase/auth"
 import { Link, useNavigate } from "react-router-dom"
+// import { FiEye } from "react-icons/fi";
+
 
 const auth = getAuth(firebaseAppConfig)
 
@@ -48,15 +50,15 @@ const Login = () => {
     return (
         <>
             <NavLayout>
-                <div className='grid md:grid-cols-2 md:h-screen overflow-hidden  m-3'>
-                    <img src='/images/signup.jpg' className='md:w-full md:h-full md:object-cover h-6/12 object-cover ' alt='' />
+                <div className='grid md:grid-cols-2  overflow-hidden  md:my-4 my-6 shadow-2xl md:w-11/12  w-11/12 mx-auto border rounded-lg'>
+                    <img src='/images/login.jpg' className='md:w-10/12 md:h-10/12 mt-0 h-4/12 w-9/12 md:p-4 p-2 mx-auto ' alt='' />
 
 
-                    <div className='flex flex-col md:px-8 md:mt-[95px] mt-0 '>
-                        <h2 className='md:text-4xl text-2xl md:font-bold font-semibold'>LogIn</h2>
-                        <p className='md:text-lg textgrey-600'> Enter the Detail your profile</p>
+                    <div className='flex flex-col md:px-8 md:mt-[95px] mt-0 px-2'>
+                        <h2 className='md:text-4xl text-xl md:font-bold font-semibold'>Log-In</h2>
+                        <p className='md:text-lg text-grey-600'> Enter the signed-up your Email</p>
                         <form onSubmit={login}
-                            className='md:mt-8 md:space-y-6 space-y-3'>
+                            className='md:mt-8 md:space-y-6 space-y-2'>
 
                             <div className='flex flex-col'>
                                 <label className='font-semibold md:text-lg mb-1'>Email</label>
@@ -65,7 +67,7 @@ const Login = () => {
                                     name='email'
                                     type='email'
                                     placeholder='Enter the your Email'
-                                    className='md:p-3 p-2 border border-grey-600 rounded' />
+                                    className='md:p-3 p-1 border border-grey-600 rounded' />
                             </div>
                             <div className='flex flex-col'>
                                 <label className='font-semibold md:text-lg mb-1'>Password</label>
@@ -74,7 +76,7 @@ const Login = () => {
                                     name='password'
                                     type={passwordType}
                                     placeholder='**********************'
-                                    className='md:p-3 p-2 border border-grey-600 rounded' />
+                                    className='md:p-3 p-1 border border-grey-600 rounded' />
 
                                 <button onClick={() => setPasswordType(passwordType === "password" ? "text" : "password")} type="button" className="absolute top-11 right-4 w-8 h-8 rounded-full hover:bg-blue-200 hover:text-blue-600">
                                     {
@@ -88,7 +90,7 @@ const Login = () => {
                             </div>
 
 
-                            <button className='md:py-3 py-1 md:px-8 px-5 rounded bg-red-400 mt-4 hover:bg-blue-500 hover:text-white'>Login</button>
+                            <button className='md:py-2 py-1 md:px-6 px-2 rounded bg-rose-400 mt-4 hover:bg-green-400 hover:text-white text-white'>Log In</button>
                         </form>
                         {/* <div className='mt-2'>
                             Don't have any account ? <Link to = '/signup' className='font-semibold p-1 text-blue-600'>Register...</Link>

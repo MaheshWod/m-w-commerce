@@ -66,14 +66,14 @@ const Home = () => {
 
         {/* Yasma Product section */}
         <div className="md:p-12 p-4">
-          <h1 className="md:text-5xl md:text-bold text-2xl text-center md:mb-6">Latest Products</h1>
-          <p className="text-grey-600 text-center md:w-7/12 mx-auto mt-1 md:mb-12 mb-6">
+          <h1 className="md:text-3xl md:font-bold font-semibold text-[14px] text-center md:mb-6 my-1">Latest Products</h1>
+          <p className="text-grey-600 text-center md:w-7/12 mx-auto text-[10px] md:text-xl md:my-2 ">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...
           </p>
-          <div className="md:w-11/12  grid md:grid-cols-4 grid-cols-1 gap-6 md:gap-12 mx-auto">
+          <div className="md:w-11/12  grid md:grid-cols-4 grid-cols-1 gap-4 md:gap-12 mx-auto ">
             {
               product.map((items, index) => (
-                <div key={index} className="bg-white rounded-md shadow-lg overflow-hidden px-2 py-2">
+                <div key={index} className="bg-white rounded-md shadow-lg overflow-hidden px-2 py-2 border">
                   <img src={items.imageUrl} className="rounded-t-md h-[280px] md:h-[400px] w-full object-cover  " alt={items.title} />
                   <div className="p-4">
                     <h1 className="font-semibold text-md">{items.title}</h1>

@@ -38,7 +38,7 @@ const Category = () => {
         <>
             <Layout>
                 <div className='md:p-16 p-6'>
-                    <div className='md:w-10/12  md:mx-auto grid md:grid-cols-4 grid-cols-1 md:gap-4 gap-2 mx-0'>
+                    <div className='md:w-10/12  mx-auto grid md:grid-cols-4 grid-cols-1 md:gap-8 gap-y-4'>
                         {category.map((items, index) => (
                             <div  key={index} className='hover:bg-slate-500 hover:text-white flex justify-center items-center  shadow-lg md:p-8 p-6  border rounded flex-col'>
                             <FcElectronics className='md:text-4xl text-2xl'/>

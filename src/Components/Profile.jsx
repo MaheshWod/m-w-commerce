@@ -363,32 +363,32 @@ const Profile = () => {
     return (
         <>
             <NavLayout>
-                <div className='md:w-8/12 mx-auto md:my-16 shadow-lg rounded-md md:p-8 p-2 border'>
-                    <div className='flex gap-3 justify-cente'>
-                        <ImProfile className='md:text-4xl text-xl' />
+                <div className='md:w-8/12 md:mx-auto mx-1 md:my-7 my-6  shadow-2xl rounded-md md:p-8 p-1  border '>
+                    <div className='flex gap-1 justify-cente'>
+                        <ImProfile className='md:text-3xl text-xl' />
                         <h1 className='md:text-3xl text-[16px] font-semibold'>Profile</h1>
                     </div>
-                    <hr className='my-2'></hr>
-                    <div className='w-24 h-24 mx-auto rounded-full relative'>
+                    <hr className='my-1'></hr>
+                    <div className='md:w-20 md:h-20 w-16 h-16 mx-auto rounded-full relative'>
                         <img src='images/avat1.jpg' className='w-fit mx-auto rounded-full' alt='' />
-                        <input type='file' accept='image/*' className=' mb-5 rounded-full opacity-0 top-0 left-0 w-full h-full absolute' />
+                        {/* <input type='file' accept='image/*' className=' mb-5 rounded-full opacity-0 top-0 left-0 w-full h-full absolute' /> */}
                     </div>
 
-                    <form className='grid grid-cols gap-3 ' onSubmit={saveProfileInfo}>
-                    <div className='grid md:grid-cols-2 grid-cols-1 md:gap-4'>
-                    <div className='flex flex-col gap-2'>
+            <form className='grid grid-cols gap-3 gap-y-[6px] ' onSubmit={saveProfileInfo}>
+                 <div className='grid md:grid-cols-2 grid-cols-1 md:gap-4'>
+                    <div className='flex flex-col gap-1'>
                         <label className='md:text-lg font-semibold'>Fullname</label>
 
                         <input 
                             onChange={handleFormValue}
                             required
                             name="FullName"
-                            className='p-2 rounded border border-gray-300'
+                            className='md:p-2 p-1 rounded border border-gray-300'
                             value={formValue.FullName}
                         />
                     </div>
 
-                    <div className='flex flex-col gap-2'>
+                    <div className='flex flex-col gap-1'>
                         <label className='md:text-lg font-semibold'>Email</label>
                         <input 
                             disabled
@@ -396,7 +396,7 @@ const Profile = () => {
                             required
                             name="email"
                             type="email"
-                            className='p-2 rounded border border-gray-300'
+                            className='md:p-2 p-1 rounded border border-gray-300'
                             value={session.email}
                         />
                     </div>
@@ -405,66 +405,65 @@ const Profile = () => {
 
                     <div />
 
-                    <button className='md:px-4 md:py-2 px-2 py-1 bg-rose-600 text-white rounded w-fit hover:bg-green-600 mt-0'>
-                        <i className="ri-save-line mr-2"></i>
+                    <button className='md:px-4 md:py-2 px-3 py-[3px] bg-rose-600 text-white rounded w-fit hover:bg-green-600 mt-0'>
                         Save
                     </button>
                 </form>
 
 {/* for addressa and street/ yasma handleAddressFormvalue hoina session.dispalyName, session.email ho remove handleAddressFormvalue.email =>not -email and password ko case ma matra ho  */}
-                    <hr className='my-8'/>
+                    <hr className='md:my-6 my-3'/>
 
-                    <form className='grid grid-cols gap-6 ' onSubmit={isAddress ? updateAddress : setAddress}>
-                    <div className='grid grid-cols-2 gap-4'>
+            <form className='grid grid-cols gap-6  gap-y-3 ' onSubmit={isAddress ? updateAddress : setAddress}>
+                 <div className='grid grid-cols-2 gap-1 md:gap-4'>
 
-                    <div className='flex flex-col gap-2 '>
+                    <div className='flex flex-col gap-1 '>
                        <label className='md:text-lg font-semibold'>Area/Street</label>
                        <input 
                             onChange={handleAddressFormValue}
                             required
                             name="address"
                             type="text"
-                            className='p-2 rounded border border-gray-300'
+                            className='md:p-2 p-1 rounded border border-gray-300'
                             value={addressFormValue.address}
                         />
                     </div>
 
 
                     
-                    <div className='flex flex-col gap-2'>
+                    <div className='flex flex-col gap-1'>
                         <label className='md:text-lg font-semibold'>City</label>
                         <input 
                             onChange={handleAddressFormValue}
                             required
                             name="street"
                             type="text"
-                            className='p-2 rounded border border-gray-300'
+                            className='md:p-2 p-1 rounded border border-gray-300'
                             value={addressFormValue.street}
                         />
                     </div>
                     </div>
 
-                  <div className='grid grid-cols-2 gap-4'>
-                  <div className='flex flex-col gap-2'>
+                  <div className='grid grid-cols-2 gap-1 md:gap-4'>
+                  <div className='flex flex-col gap-1'>
                         <label className='md:text-lg font-semibold'>State</label>
                         <input 
                             onChange={handleAddressFormValue}
                             required
                             name="state"
                             type="text"
-                            className='p-2 rounded border border-gray-300'
+                            className='md:p-2 p-1 rounded border border-gray-300'
                             value={addressFormValue.state}
                         />
                     </div>
 
-                    <div className='flex flex-col gap-2'>
+                    <div className='flex flex-col gap-1'>
                         <label className='md:text-lg font-semibold'>Country</label>
                         <input 
                             onChange={handleAddressFormValue}
                             required
                             name="country"
                             type="text"
-                            className='p-2 rounded border border-gray-300'
+                            className='md:p-2 p-1 rounded border border-gray-300'
                             value={addressFormValue.country}
                         />
                     </div>
@@ -474,11 +473,9 @@ const Profile = () => {
 
                     <div>
                     {
-                        isAddress ? <button className='md:px-4 md:py-2 px-2 py-1 bg-green-500 text-white rounded w-fit hover:bg-green-600'>
-                        <i className="ri-save-line mr-2"></i>
+                        isAddress ? <button className='md:px-4 md:py-2 px-3 py-[3px] bg-green-500 text-white rounded w-fit hover:bg-green-600'>
                         Save
-                    </button> : <button className='md:px-4 md:py-2 px-2 py-1 bg-rose-600 text-white rounded w-fit hover:bg-green-600'>
-                        <i className="ri-save-line mr-2"></i>
+                    </button> : <button className='md:px-4 md:py-2 px-3 py-[3px]  bg-rose-600 text-white rounded w-fit hover:bg-green-600'>
                         Submit
                     </button>
                     }

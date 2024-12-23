@@ -114,7 +114,7 @@ const NavLayout = ({ children }) => {
                             <li key={index}>
                                 <Link
                                     to={item.href}
-                                    className='block py-4 text-center hover:bg-rose-400 hover:text-white w-[100px]  my-2 rounded-sm'
+                                    className='block py-2 text-center hover:bg-rose-400 hover:text-white w-[100px]  my-2 rounded-md'
                                 >
                                     {item.label}
                                 </Link>
@@ -124,10 +124,10 @@ const NavLayout = ({ children }) => {
                         {
                             !session && <>
                                 <Link to={'/login'}
-                                    className='block py-4 rounded-sm text-center hover:bg-rose-400 hover:text-white w-[100px] my-2'
+                                    className='block py-2 rounded-md text-center hover:bg-rose-400 hover:text-white w-[100px] my-2'
                                 >Login</Link>
                                 <Link to={'/signup'}
-                                    className='bg-blue-300 px-8 py-3 font-bold rounded block text-center hover:bg-rose-400 hover:text-white my-2'
+                                    className='bg-blue-300 px-8 py-2 font-bold rounded-md block text-center hover:bg-rose-400 hover:text-white my-2'
                                 >SignUp</Link>
                             </>
                         }
@@ -170,10 +170,12 @@ const NavLayout = ({ children }) => {
             </div>
 
 {/* footer ko lagi */}
-            <footer className='bg-slate-300 md:py-16 py-8  '>
+
+{/* Desktop ko footer responsive/// */}
+<footer className='bg-slate-300 md:py-16 py-8  hidden md:block'>
                 <div className='md:w-10/12 md:mx-auto grid md:grid-cols-4 grid-cols-1 text-black md:gap-4 gap-3 mx-3'>
                     <div>
-                        <h1 className='text-black font-semibold md:text-2xl text-[18px] md:mb-3 mb-2'>Brand Details</h1>
+                        <h1 className='text-black font-semibold md:text-2xl text-[14px] md:mb-3 mb-2'>Brand Details</h1>
                         <p className='text-grey-100 mb-6'>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         </p>
@@ -186,33 +188,35 @@ const NavLayout = ({ children }) => {
                         </div>
                     </div>
 
-                    <div >
-                        <h1 className='text-black font-semibold md:text-2xl text-[18px] md:mb-3 mb-2'>Website Links</h1>
-                        <ul className='md:space-y-2 space-y-[0px] flex flex-col items-start px-2  '>
+                    <div className='flex flex-col '>
+                        <h1 className='text-black font-semibold md:text-2xl text-[14px] mb-2'>Website Links</h1>
+                        <ul className=' gap-y-2 flex flex-col items-start   '>
                             {menus.map((item, index) => (
                                 <li key={index} className="inline-block hover:bg-stone-500  rounded py-1 hover:px-2 hover:text-white">
                                     <Link 
                                     to={item.href}>{item.label}</Link>
                                 </li>
                             ))}
-                            <li className='hover:bg-stone-500 hover:px-2 rounded hover:text-white ' ><Link to={'/login'}>Login</Link></li>
-                            <li className='hover:bg-stone-500 hover:px-2 rounded hover:text-white '><Link to={'navlayout/signup'}>SignUp</Link></li>
+                           <div className='space-y-4 mt-1'>
+                           <li className='hover:bg-stone-500 hover:px-2 rounded hover:text-white ' ><Link to={'/login'}>Login</Link></li>
+                           <li className='hover:bg-stone-500 hover:px-2 rounded hover:text-white  '><Link to={'navlayout/signup'}>SignUp</Link></li>
+                           </div>
+                        </ul>
+                    </div>
+
+                    <div >
+                        <h1 className='text-black font-semibold md:text-2xl text-[14px] md:mb-3 mb-2 '>Follow Us</h1>
+                        <ul className='md:space-y-2 gap-y-2  flex flex-col '>
+                            <li className='hover:text-white hover:bg-stone-500  rounded  '><Link to={'/login'}>Facebook</Link></li>
+                            <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>Instagram</Link></li>
+                            <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>LinkedIn</Link></li>
+                            <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>YouTube</Link></li>
+                            <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>WhatsApp</Link></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h1 className='text-black font-semibold md:text-2xl text-[18px] md:mb-3 mb-2'>Follow Us</h1>
-                        <ul className='space-y-2  flex flex-col'>
-                            <li className='hover:text-white hover:bg-stone-500 px-2 rounded'><Link to={'/login'}>Facebook</Link></li>
-                            <li className='hover:text-white hover:bg-stone-500 px-2 rounded'><Link to={'/login'}>Instagram</Link></li>
-                            <li className='hover:text-white hover:bg-stone-500 px-2 rounded'><Link to={'/login'}>LinkedIn</Link></li>
-                            <li className='hover:text-white hover:bg-stone-500 px-2 rounded'><Link to={'/login'}>YouTube</Link></li>
-                            <li className='hover:text-white hover:bg-stone-500 px-2 rounded'><Link to={'/login'}>WhatsApp</Link></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h1 className='font-semibold md:text-2xl text-[18px] md:mb-3 mb-2 text-black'>Contact Us</h1>
+                        <h1 className='font-semibold md:text-2xl text-[14px] md:mb-3 mb-2 text-black'>Contact Us</h1>
                         <div className='text-black'>
                             <form className='md:space-y-4 space-y-2'>
                                 <input className='bg-white w-full md:p-3 p-2 rounded'
@@ -233,7 +237,84 @@ const NavLayout = ({ children }) => {
                                     name='message'
                                 />
                                 <button
-                                    className='bg-black text-white md:px-3 px-2 md:py-2 py-1 rounded-md hover:bg-rose-500 hover:text-white font-semibold'
+                                    className='bg-green-500 text-white md:px-3 px-2 md:py-2 py-1 rounded-md hover:bg-rose-500 hover:text-white font-semibold'
+                                >
+                                    Submit
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+{/* mobile lo lagi footer for responsive/// */}
+            <footer className='bg-slate-300 md:py-16 py-8 block md:hidden '>
+                <div className='md:w-10/12 md:mx-auto grid md:grid-cols-4 grid-cols-1 text-black md:gap-4 gap-3 mx-3'>
+                    <div>
+                        <h1 className='text-black font-semibold md:text-2xl text-[18px] md:mb-3 mb-2'>Brand Details</h1>
+                        <p className='text-grey-100 mb-6'>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                        <div className="md:w-[100px] md:h-[100px] h-[60px] w-[60px] rounded-full border-2 border-gray-300 m-1 mx-auto ">
+                            <img
+                                src="/images/avat1.jpg"
+                                alt="Avatar"
+                                className="w-full h-full object-cover rounded-full"
+                            />
+                        </div>
+                    </div>
+                   <div className='grid grid-cols-2 gap-2   '>
+                   <div className='flex flex-col'>
+                        <h1 className='text-black font-semibold md:text-2xl text-[18px] mb-1'>Website Links</h1>
+                        <ul className=' gap-y-[0px] flex flex-col items-start   '>
+                            {menus.map((item, index) => (
+                                <li key={index} className="inline-block hover:bg-stone-500  rounded py-1 hover:px-2 hover:text-white">
+                                    <Link 
+                                    to={item.href}>{item.label}</Link>
+                                </li>
+                            ))}
+                           <div className='space-y-2 mt-1'>
+                           <li className='hover:bg-stone-500 hover:px-2 rounded hover:text-white ' ><Link to={'/login'}>Login</Link></li>
+                           <li className='hover:bg-stone-500 hover:px-2 rounded hover:text-white  '><Link to={'navlayout/signup'}>SignUp</Link></li>
+                           </div>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h1 className='text-black font-semibold md:text-2xl text-[18px] md:mb-3 mb-2 '>Follow Us</h1>
+                        <ul className=' gap-y-2  flex flex-col '>
+                            <li className='hover:text-white hover:bg-stone-500  rounded  '><Link to={'/login'}>Facebook</Link></li>
+                            <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>Instagram</Link></li>
+                            <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>LinkedIn</Link></li>
+                            <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>YouTube</Link></li>
+                            <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>WhatsApp</Link></li>
+                        </ul>
+                    </div>
+                   </div>
+
+                    <div>
+                        <h1 className='font-semibold md:text-2xl text-[18px] md:mb-3 mb-2 text-black'>Contact Us</h1>
+                        <div className='text-black'>
+                            <form className='md:space-y-4 space-y-2'>
+                                <input className='bg-white w-full px-2 py-1 rounded'
+                                    required
+                                    type='text'
+                                    placeholder='Enter the Full Name'
+                                    name='fullName'
+                                />
+                                <input className='bg-white w-full px-2 py-1 rounded'
+                                    required
+                                    type='email'
+                                    placeholder='Enter Email'
+                                    name='email'
+                                />
+                                <textarea className='bg-white w-full px-2 py-1 rounded'
+                                    required
+                                    placeholder='Enter the message'
+                                    name='message'
+                                />
+                                <button
+                                    className='bg-green-500 text-white md:px-3 px-2 md:py-2 py-1 rounded-md hover:bg-rose-500 hover:text-white font-semibold'
                                 >
                                     Submit
                                 </button>

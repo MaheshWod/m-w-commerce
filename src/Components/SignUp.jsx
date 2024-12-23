@@ -46,23 +46,23 @@ const SignUp = () => {
 
   return (
     <NavLayout>
-      <div className="grid md:grid-cols-2 md:h-screen overflow-hidden mb-20">
-        <img src="/images/signup.jpg" className="md:w-full md:h-full mt-0" alt="Signup" />
+      <div className="grid md:grid-cols-2  overflow-hidden md:my-4 my-2 md:shadow-2xl shadow-lg border rounded-lg w-11/12  mx-auto">
+        <img src="/images/signup.jpg" className="md:w-10/12 md:h-10/12 mt-0 h-4/12 w-9/12 md:p-4 p-2 mx-auto" alt="Signup" />
 
-        <div className="flex flex-col md:px-8 md:mt-[95px] mt-1">
+        <div className="flex flex-col md:px-8 md:mt-8 mt-1 p-2">
           <h2 className="md:text-4xl text-2xl font-bold text-red-400">New Users</h2>
           <p className="md:text-lg text-grey-600">Create your account to start shopping</p>
 
-          <form onSubmit={signup} className="md:mt-8 space-y-6">
+          <form onSubmit={signup} className="md:mt-4 md:space-y-4 space-y-2">
             <div className="flex flex-col">
-              <label className="md:font-semibold md:text-lg mb-1">Full Name</label>
+              <label className="md:font-semibold md:text-lg text-[14px] mb-1">Full Name</label>
               <input
                 onChange={handleOnchange}
                 required
                 name="FullName"
                 type="text"
                 placeholder="Enter your name"
-                className="p-3 border border-grey-600 rounded"
+                className="md:p-3 p-1 border border-grey-600 rounded"
               />
             </div>
             <div className="flex flex-col">
@@ -73,7 +73,7 @@ const SignUp = () => {
                 name="email"
                 type="email"
                 placeholder="Enter your Email"
-                className="p-3 border border-grey-600 rounded"
+                className="md:p-3 p-1 border border-grey-600 rounded"
               />
             </div>
             <div className="flex flex-col">
@@ -84,7 +84,7 @@ const SignUp = () => {
                 name="password"
                 type="password"
                 placeholder="**********************"
-                className="p-3 border border-grey-600 rounded"
+                className="md:p-3 p-1 border border-grey-600 rounded"
               />
             </div>
 
@@ -93,7 +93,7 @@ const SignUp = () => {
               loader ? (
                 <h1 className="text-semibold text-grey-500">Loading...</h1>
               ) : (
-                <button type="submit" className="md:py-3 md:px-8 px-3 text-black py-1 rounded bg-red-400 mt-4 hover:bg-green-500 hover:text-white">
+                <button type="submit" className="md:py-3 md:px-8 px-3 py-1 rounded bg-red-400 mt-4 hover:bg-green-500  text-white">
                   Sign Up
                 </button>
               )
@@ -103,7 +103,7 @@ const SignUp = () => {
           <div className="mt-2">
             Already have an account?{' '}
             <Link to="/login" className="font-semibold p-1 text-blue-500">
-              Sign In...
+              Login In...
             </Link>
           </div>
 
