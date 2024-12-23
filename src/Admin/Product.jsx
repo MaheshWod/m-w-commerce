@@ -282,7 +282,7 @@ const handleEditProduct = async (e) => {
         </div>
 
         {productData && (
-          <div className=" bg-black bg-opacity-80   absolute top-0 left-0 w-full h-full flex justify-center items-center">
+          <div className=" bg-black bg-opacity-80  fixed top-0 left-0 w-full h-full flex justify-center items-center">
             <div className="bg-white md:w-5/12 md:py-5 py-2 md:px-6 rounded-md border mx-2 px-2  border-1 relative">
               <button className="absolute md:top-2 right-3" onClick={() => setProductData(false)}>
                 <IoMdCloseCircleOutline className="md:text-xl text-black" />
