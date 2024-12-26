@@ -95,9 +95,65 @@ const Home = () => {
       <NavLayout>
 
          <div className='relative z-100 '>
-          <Carousel className=''>
+          <Carousel>
 
             <div className="md:h-96 h-48 md:w-full max-h-full relative   bg-cover bg-center rounded-none" style={{ backgroundImage: 'url("/nature1.jpg") '}}>
+              <div className="absolute inset-0 bg-slate-700 md:bg-opacity-70 bg-opacity-50 md:mx-80  md:my-32 flex items-center justify-center rounded-md">
+                <div className="text-center text-white  ">
+                  <h3 className="md:text-xl md:font-bold font-semibold ">Nature Of Stars</h3>
+                  <p className='px-10 text-slate-200'>{`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,...`.slice(0, 100)}</p>
+                  <Link to="https://www.britannica.com/science/mountain-landform" target="_blank">
+                    <button className="mt-4 bg-slate-500 text-white md:px-4 px-2 py-[2px] md:py-2 rounded hover:bg-neutral-400 my-3 md:font-semibold ">
+                      See More
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="md:h-96 h-48 md:w-full max-h-full relative   bg-cover bg-center rounded-none" style={{ backgroundImage: 'url("/snow.jpg") '}}>
+              <div className="absolute inset-0 bg-slate-700 md:bg-opacity-70 bg-opacity-50 md:mx-80  md:my-32 flex items-center justify-center rounded-md">
+                <div className="text-center text-white  ">
+                  <h3 className="md:text-xl md:font-bold font-semibold ">Nature Of Stars</h3>
+                  <p className='px-10 text-slate-200'>{`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,...`.slice(0, 100)}</p>
+                  <Link to="https://www.britannica.com/science/mountain-landform" target="_blank">
+                    <button className="mt-4 bg-slate-500 text-white md:px-4 px-2 py-[2px] md:py-2 rounded hover:bg-neutral-400 my-3 md:font-semibold ">
+                      See More
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="md:h-96 h-48 md:w-full max-h-full relative   bg-cover bg-center rounded-none" style={{ backgroundImage: 'url("/sweet.jpg") '}}>
+              <div className="absolute inset-0 bg-slate-700 md:bg-opacity-70 bg-opacity-50 md:mx-80  md:my-32 flex items-center justify-center rounded-md">
+                <div className="text-center text-white  ">
+                  <h3 className="md:text-xl md:font-bold font-semibold ">Nature Of Stars</h3>
+                  <p className='px-10 text-slate-200'>{`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,...`.slice(0, 100)}</p>
+                  <Link to="https://www.britannica.com/science/mountain-landform" target="_blank">
+                    <button className="mt-4 bg-slate-500 text-white md:px-4 px-2 py-[2px] md:py-2 rounded hover:bg-neutral-400 my-3 md:font-semibold ">
+                      See More
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="md:h-96 h-48 md:w-full max-h-full relative   bg-cover bg-center rounded-none" style={{ backgroundImage: 'url("/sky.jpg") '}}>
+              <div className="absolute inset-0 bg-slate-700 md:bg-opacity-70 bg-opacity-50 md:mx-80  md:my-32 flex items-center justify-center rounded-md">
+                <div className="text-center text-white  ">
+                  <h3 className="md:text-xl md:font-bold font-semibold ">Nature Of Stars</h3>
+                  <p className='px-10 text-slate-200'>{`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,...`.slice(0, 100)}</p>
+                  <Link to="https://www.britannica.com/science/mountain-landform" target="_blank">
+                    <button className="mt-4 bg-slate-500 text-white md:px-4 px-2 py-[2px] md:py-2 rounded hover:bg-neutral-400 my-3 md:font-semibold ">
+                      See More
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="md:h-96 h-48 md:w-full max-h-full relative   bg-cover bg-center rounded-none" style={{ backgroundImage: 'url("/waves.jpg") '}}>
               <div className="absolute inset-0 bg-slate-700 md:bg-opacity-70 bg-opacity-50 md:mx-80  md:my-32 flex items-center justify-center rounded-md">
                 <div className="text-center text-white  ">
                   <h3 className="md:text-xl md:font-bold font-semibold ">Nature Of Stars</h3>
