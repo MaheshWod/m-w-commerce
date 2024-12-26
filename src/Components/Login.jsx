@@ -61,7 +61,7 @@ const Login = () => {
                             className='md:mt-8 md:space-y-6 space-y-2'>
 
                             <div className='flex flex-col'>
-                                <label className='font-semibold md:text-lg mb-1'>Email</label>
+                                <label className='md:font-semibold md:text-lg mb-1'>Email</label>
                                 <input required
                                     onChange={handleChange}
                                     name='email'
@@ -70,7 +70,7 @@ const Login = () => {
                                     className='md:p-3 p-1 border border-grey-600 rounded' />
                             </div>
                             <div className='flex flex-col'>
-                                <label className='font-semibold md:text-lg mb-1'>Password</label>
+                                <label className='md:font-semibold md:text-lg mb-1'>Password</label>
                                 <input required
                                     onChange={handleChange}
                                     name='password'
@@ -103,7 +103,7 @@ const Login = () => {
 
                         {
                             error &&
-                            <div className="flex justify-between items-center mt-2 bg-rose-600 p-3 rounded shadow text-white font-semibold animate__animated animate__pulse">
+                            <div className="flex justify-between items-center md:mt-2 mt-1 bg-rose-600 md:p-3 p-1 rounded shadow text-white font-semibold animate__animated animate__pulse">
                                 <p>{error}</p>
                                 <button onClick={() => setError(null)}>
                                     <i className="ri-close-line"></i>
@@ -112,7 +112,7 @@ const Login = () => {
                         }
                         {
                             loader && (
-              <div className="flex justify-center items-center mt-4">
+              <div className="flex justify-center items-center md:mt-4 mt-2">
                 <div className="loader"></div> {/* Add a loader component or animation here */}
               </div>
             )}

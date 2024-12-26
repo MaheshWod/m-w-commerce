@@ -95,7 +95,7 @@ const NavLayout = ({ children }) => {
 
     return (
         <>
-            <nav className='shadow-xl bg-slate-300 sticky top-0 left-0 '>
+            <nav className='shadow-xl bg-slate-300 sticky top-0 left-0 z-100 '>
                 <div className='w-10/12 mx-auto flex  items-center justify-between'>
                     <div className="md:w-[100px] md:h-[100px] w-[50px] h[50px] rounded-full border-2 border-gray-300 m-1">
                         <img
@@ -212,6 +212,7 @@ const NavLayout = ({ children }) => {
                             <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>LinkedIn</Link></li>
                             <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>YouTube</Link></li>
                             <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>WhatsApp</Link></li>
+                            <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>TwiterApp</Link></li>
                         </ul>
                     </div>
 
@@ -245,6 +246,7 @@ const NavLayout = ({ children }) => {
                         </div>
                     </div>
                 </div>
+      <hr className=" border-t-2 mt-8 border-black   mx-20" />
             </footer>
 
 {/* mobile lo lagi footer for responsive/// */}
@@ -263,7 +265,7 @@ const NavLayout = ({ children }) => {
                             />
                         </div>
                     </div>
-                   <div className='grid grid-cols-2 gap-2   '>
+                   <div className='flex flex-col-2 gap-2 justify-between'>
                    <div className='flex flex-col'>
                         <h1 className='text-black font-semibold md:text-2xl text-[18px] mb-1'>Website Links</h1>
                         <ul className=' gap-y-[0px] flex flex-col items-start   '>
@@ -288,6 +290,7 @@ const NavLayout = ({ children }) => {
                             <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>LinkedIn</Link></li>
                             <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>YouTube</Link></li>
                             <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>WhatsApp</Link></li>
+                            <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>TwiterApp</Link></li>
                         </ul>
                     </div>
                    </div>

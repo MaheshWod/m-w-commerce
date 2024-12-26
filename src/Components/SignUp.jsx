@@ -109,10 +109,10 @@ const SignUp = () => {
 
           {/* Show error if exists */}
           {error && (
-            <div className='flex justify-between items-center mt-2 bg-rose-200 p-2'>
+            <div className='flex justify-between items-center md:mt-2 mt-1 bg-rose-200 md:p-2 p-1'>
               <p>{error}</p>
               <button onClick={() => setError(null)}>
-                <IoMdCloseCircle className="mr-2 text-[20px] text-black" />
+                <IoMdCloseCircle className="mr-2 md:text-[20px] text-[14px] text-black" />
               </button>
             </div>
           )}
