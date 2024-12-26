@@ -95,7 +95,7 @@ const Order = () => {
                 <div className="md:mt-2 overflow-x-auto w-full hidden md:block">
                     <table className="w-full border-collapse">
                         <thead>
-                            <tr className="bg-rose-500 text-white">
+                            <tr className="bg-neutral-500 text-white">
                                 <th className="py-4 px-2 text-center">Order ID</th>
                                 <th className="px-2 text-center">Customer's Name</th>
                                 <th className="px-2 text-center">Email</th>

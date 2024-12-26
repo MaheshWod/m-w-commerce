@@ -123,6 +123,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { IoCartOutline } from "react-icons/io5";
+import Swal from 'sweetalert2';
 import { MdDelete } from "react-icons/md";
 import firebaseAppConfig from '../util/firebase-config';
 import { getFirestore, getDocs, collection, where, query, deleteDoc, doc } from 'firebase/firestore';
@@ -136,7 +137,6 @@ const Cart = () => {
     const [products, setProducts] = useState([]);
     const [session, setSession] = useState(null);
     const [totalAmount, setTotalAmount] = useState(0);
-
     // Monitor user authentication state
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -197,6 +197,45 @@ const Cart = () => {
         }
     };
 
+
+
+    const handleBuyNow = async () => {
+        try {
+            if (session) {
+                const col = collection(db, "carts");
+                const q = query(col, where("userId", "==", session.uid));
+                const snapshot = await getDocs(q);
+    
+                const deletePromises = snapshot.docs.map((doc) => deleteDoc(doc.ref));
+                await Promise.all(deletePromises);
+    
+                setProducts([]); // Clear local state
+    
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Your payment was processed successfully, and your cart has been cleared.',
+                    icon: 'success',
+                    confirmButtonText: 'OK',
+                });
+            } else {
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'No active session found. Please log in to proceed.',
+                    icon: 'error',
+                    confirmButtonText: 'OK',
+                });
+            }
+        } catch (error) {
+            console.error("Error processing payment:", error);
+            Swal.fire({
+                title: 'Error!',
+                text: 'Something went wrong while processing your payment.',
+                icon: 'error',
+                confirmButtonText: 'Try Again',
+            });
+        }
+    };
+    
     return (
         <>
             <NavLayout>
@@ -240,9 +279,12 @@ const Cart = () => {
                     <hr className='md:my-6 my-2'></hr>
                     <div className='flex justify-between items-center gap-1'>
                         <h1 className='md:text-2xl font-semibold'>Total Amount: ${totalAmount}</h1>
-                        <button className='flex justify-center items-center bg-green-600 text-white md:px-6 md:py-3 px-1 py-1 rounded md:gap-1  hover:bg-yellow-500 hover:text-black'>
+                        <button onClick={handleBuyNow}
+                        className='flex justify-center items-center bg-green-600 text-white md:px-6 md:py-3 px-1 py-1 rounded md:gap-1  hover:bg-yellow-500 hover:text-black'>
                             <MdDelete className='md:text-xl text-[13px]' />
                             <h1 className='text-[14px]'>Buy Now</h1>
+                            
+
                         </button>
                     </div>
                 </div>

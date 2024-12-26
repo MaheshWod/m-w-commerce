@@ -102,7 +102,7 @@ const Layout = ({ children }) => {
                     transition: '0.4s'
                 }}
 
-                className=' h-full fixed top-0 left-0 bg-indigo-500 overflow-hidden '>
+                className=' h-full fixed top-0 left-0 bg-neutral-500 overflow-hidden '>
                 <div className='flex flex-col py-4'>
 
                     {menus.map((item, index) => (
@@ -181,7 +181,7 @@ const Layout = ({ children }) => {
                     transition: '0.4s'
                 }}
 
-                className=' h-full fixed top-0 left-0 bg-indigo-500 overflow-hidden  '>
+                className=' h-full fixed top-0 left-0 bg-neutral-500 overflow-hidden  '>
                 <div className='flex flex-col py-4'>
 
                     {menus.map((item, index) => (

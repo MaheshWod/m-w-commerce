@@ -234,22 +234,22 @@ const handleEditProduct = async (e) => {
         <div className="flex justify-between items-center gap-4">
           <h1 className="text-xl font-semibold  md:mb-4">Products</h1>
           
-          <button className="bg-indigo-600 text-white rounded md:py-2 md:px-4 px-2 hover:bg-green-600" onClick={handleNewProductClick}>
-             <div className='flex md:my-2 px-1 justify-center items-center  '><MdAddShoppingCart className=" mt-1 my-2" />
-             <h3 className='text-[14px]'>New Product</h3></div>
+          <button className="bg-neutral-700 text-white rounded md:py-1 md:px-3 px-2 hover:bg-teal-600" onClick={handleNewProductClick}>
+             <div className='flex md:my-1 px-1 justify-center items-center gap-x-1 '><MdAddShoppingCart className="my-2" />
+             <h3 className='text-[14px] font-semibold'>New Product</h3></div>
           </button>
         </div>
 
-        <div className="grid md:grid-cols-4 grid-cols-1 gap-4 mt-3  ">
+        <div className="grid md:grid-cols-5 grid-cols-1 gap-4 md:mt-5 mt-2  ">
 
           {
             products.map((item, index) => ( 
             <div key={index} className="bg-white rounded-md shadow-lg  ">
               <div className="relative">
                 {item.imageUrl ? (
-                  <img src={item.imageUrl} alt={item.title || "Product"} className="rounded-t-md md:h-[400px] h-[300px] px-2 py-2 w-full object-cover" />
+                  <img src={item.imageUrl} alt={item.title || "Product"} className="rounded-t-md md:h-[300px] h-[230px]  w-full object-cover" />
                 ) : (
-                  <div className="md:h-[400px] h-[300px] w-full bg-gray-300 flex items-center justify-center">
+                  <div className="md:h-[300px] h-[230px] w-full bg-slate-600 flex items-center justify-center bg-opacity-30">
                     <span>Upload Image</span>
                   </div>
                 )}
@@ -264,10 +264,10 @@ const handleEditProduct = async (e) => {
 
                 <div className='flex space-x-2'>
                 <button onClick={()=>handleEditButtonClick(item)}
-                className='bg-green-500 p-1 rounded px-[14px] text-white  hover:bg-blue-600' >Edit</button>
+                className='focus:outline-none text-white bg-neutral-700 hover:bg-teal-900 focus:ring-4 focus:ring-red-300 font-medium rounded text-sm px-3 py-1  ' >Edit</button>
 
                 <button onClick={()=>deleteProducts(item.id)}
-                 className='bg-red-500 p-1 rounded text-white hover:bg-black'>Delete</button>
+                 className='focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded text-sm px-3 py-1   '>Delete</button>
               </div>
                 </div>
                 <h2 className="text-md capitalize">{item.description.slice(0,20)}...</h2>
@@ -328,7 +328,7 @@ const handleEditProduct = async (e) => {
                 value={productFormValue.description} />
                 
                    
-                   {editingProduct ? <button className="bg-green-700 font-semibold hover:text-black hover:bg-green-400 text-white rounded px-4 py-2">Save</button>: <button className="bg-indigo-600 text-white rounded px-4 py-2 hover:bg-green-600">Submit</button>}
+                   {editingProduct ? <button className="bg-green-500  hover:text-white hover:bg-green-700 font-semibold text-white rounded md:px-4 md:py-2 px-2 py-1">Save</button>: <button className="bg-indigo-500 text-white rounded md:px-4 md:py-2 px-2 py-1 hover:bg-green-700 font-semibold">Submit</button>}
                 
               </form>
             </div>

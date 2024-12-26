@@ -95,7 +95,7 @@ const NavLayout = ({ children }) => {
 
     return (
         <>
-            <nav className='shadow-lg bg-slate-300 sticky top-0 left-0'>
+            <nav className='shadow-xl bg-slate-300 sticky top-0 left-0 '>
                 <div className='w-10/12 mx-auto flex  items-center justify-between'>
                     <div className="md:w-[100px] md:h-[100px] w-[50px] h[50px] rounded-full border-2 border-gray-300 m-1">
                         <img
@@ -114,7 +114,7 @@ const NavLayout = ({ children }) => {
                             <li key={index}>
                                 <Link
                                     to={item.href}
-                                    className='block py-2 text-center hover:bg-rose-400 hover:text-white w-[100px]  my-2 rounded-md'
+                                    className='block md:py-1 md:px-4  text-center hover:bg-neutral-500 hover:text-white my-1 rounded-md'
                                 >
                                     {item.label}
                                 </Link>
@@ -124,10 +124,10 @@ const NavLayout = ({ children }) => {
                         {
                             !session && <>
                                 <Link to={'/login'}
-                                    className='block py-2 rounded-md text-center hover:bg-rose-400 hover:text-white w-[100px] my-2'
+                                    className='block md:py-1 md:px-4 rounded-md text-center hover:bg-neutral-500 hover:text-white px-2 my-2'
                                 >Login</Link>
                                 <Link to={'/signup'}
-                                    className='bg-blue-300 px-8 py-2 font-bold rounded-md block text-center hover:bg-rose-400 hover:text-white my-2'
+                                    className='bg-neutral-500 px-4 py-1 font-bold rounded-md block text-center hover:bg-rose-400 text-white my-2'
                                 >SignUp</Link>
                             </>
                         }
@@ -327,7 +327,7 @@ const NavLayout = ({ children }) => {
 {/* mobile ko lagi aside bar */}
 {/* { open &&  */}
     <aside
-                className='overflow-hidden md:hidden  h-full  fixed top-0 left-0 shadow-lg bg-blue-500 z-50'
+                className='overflow-hidden md:hidden  h-full  fixed top-0 left-0 shadow-lg bg-neutral-600 z-50'
                 style={{ width: open ? 230 : 0 , transition: '0.3s' }}
             >
                 <div className='flex flex-col gap-4 mt-1'>

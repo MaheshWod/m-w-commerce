@@ -5,11 +5,24 @@ import Swal from 'sweetalert2'
 import firebaseAppConfig from '../util/firebase-config'
 import { getFirestore, addDoc, collection, getDocs } from 'firebase/firestore'
 import { onAuthStateChanged, getAuth } from 'firebase/auth'
+// import { Carousel } from 'react-responsive-carousel'
+// import { IoIosArrowBack } from "react-icons/io";
+import { Carousel } from "flowbite-react";
+// import Slider from "react-slick";
+// import 'slick-carousel/slick/slick.css';
+// import 'slick-carousel/slick/slick-theme.css';
+import { Link } from 'react-router-dom'
 
 const db = getFirestore(firebaseAppConfig)
 const auth = getAuth(firebaseAppConfig)
 
 const Home = () => {
+
+
+
+
+
+
   const [product, setProduct] = useState([])
   const [session, setSession] = useState(null)
 
@@ -57,15 +70,61 @@ const Home = () => {
     }
   }
 
+  const handleBuyNow = () => {
+    if (session) {
+      Swal.fire({
+        title: 'Success!',
+        text: 'Your payment was processed successfully',
+        icon: 'success',
+        confirmButtonText: 'OK',
+      });
+    }
+    else {
+      Swal.fire({
+        title: 'Error!',
+        text: 'No active session found. Please log in to proceed.',
+        icon: 'error',
+        confirmButtonText: 'OK',
+      });
+    }
+
+  }
+
   return (
     <>
       <NavLayout>
-        <div className="overflow-x-hidden">
-          <img className="md:h-[500px] h-[150px]  md:w-full object-fill  " src='/potrait.jpg' alt='home' />
-        </div>
+
+         <div className='relative z-100 '>
+          <Carousel className=''>
+
+            <div className="md:h-96 h-48 md:w-full max-h-full relative   bg-cover bg-center rounded-none" style={{ backgroundImage: 'url("/nature1.jpg") '}}>
+              <div className="absolute inset-0 bg-slate-700 md:bg-opacity-70 bg-opacity-50 md:mx-80  md:my-32 flex items-center justify-center rounded-md">
+                <div className="text-center text-white  ">
+                  <h3 className="md:text-xl md:font-bold font-semibold ">Nature Of Stars</h3>
+                  <p className='px-10 text-slate-200'>{`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,...`.slice(0, 100)}</p>
+                  <Link to="https://www.britannica.com/science/mountain-landform" target="_blank">
+                    <button className="mt-4 bg-slate-500 text-white md:px-4 px-2 py-[2px] md:py-2 rounded hover:bg-neutral-400 my-3 md:font-semibold ">
+                      See More
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+           
+          
+           
+
+          </Carousel>
+        </div> 
+
+        {/* 
+  
+
+
+
 
         {/* Yasma Product section */}
-        <div className="md:p-12 p-4">
+        <div className="md:p-4 p-4">
           <h1 className="md:text-3xl md:font-bold font-semibold text-[14px] text-center md:mb-6 my-1">Latest Products</h1>
           <p className="text-grey-600 text-center md:w-7/12 mx-auto text-[10px] md:text-xl md:my-2 ">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...
@@ -83,7 +142,8 @@ const Home = () => {
                       <del className="font-semibold text-red-400">${items.price}</del>
                       <label className="text-grey-600">({items.discount}% off)</label>
                     </div>
-                    <button className="w-full bg-green-500 rounded p-2 my-2 hover:bg-green-900 hover:text-white">Buy Now</button>
+                    <button onClick={handleBuyNow}
+                      className="w-full bg-green-500 rounded p-2 my-2 hover:bg-green-900 hover:text-white">Buy Now</button>
                     <button onClick={() => addToCart(items)}
                       className="w-full bg-orange-500 rounded p-2 mt-2 hover:bg-orange-900 hover:text-white">Add to Cart</button>
                   </div>
