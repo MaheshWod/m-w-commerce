@@ -8,13 +8,13 @@ import { getFirestore, addDoc, collection, getDocs, updateDoc, doc, deleteDoc } 
 import Swal from 'sweetalert2';
 import axios from 'axios';
 
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 // import { text } from '@cloudinary/url-gen/qualifiers/source';
 
 const db = getFirestore(firebaseAppConfig);
 
 const Product = () => {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   const [products, setProducts] = useState([]);
   const [productFormValue, setProductFormValue] = useState(
     { title: '', 
