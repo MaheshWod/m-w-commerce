@@ -14,7 +14,7 @@ import Failed from './Components/Failed';
 import Payment from './Admin/Payment';
 import Category from './Admin/Category';
 import Setting from './Admin/Setting';
-import ProductDetail from './Admin/ProductDetail';
+import ProductDetail from './Components/ProductDetail';
 function App() {
   return (
     <BrowserRouter>
