@@ -5,12 +5,10 @@ import Swal from 'sweetalert2'
 import firebaseAppConfig from '../util/firebase-config'
 import { getFirestore, addDoc, collection, getDocs } from 'firebase/firestore'
 import { onAuthStateChanged, getAuth } from 'firebase/auth'
-// import { Carousel } from 'react-responsive-carousel'
-// import { IoIosArrowBack } from "react-icons/io";
+import { useNavigate } from 'react-router-dom'
+
 import { Carousel } from "flowbite-react";
-// import Slider from "react-slick";
-// import 'slick-carousel/slick/slick.css';
-// import 'slick-carousel/slick/slick-theme.css';
+
 import { Link } from 'react-router-dom'
 
 const db = getFirestore(firebaseAppConfig)
@@ -19,7 +17,7 @@ const auth = getAuth(firebaseAppConfig)
 const Home = () => {
 
 
-
+const navigate = useNavigate()
 
 
 
@@ -90,6 +88,11 @@ const Home = () => {
 
   }
 
+  
+  const ProductDetail = (items)=>{
+    console.log(items)
+    navigate('/product_detail',{ state: items });
+  }
   return (
     <>
       <NavLayout>
@@ -180,7 +183,7 @@ const Home = () => {
 
 
         {/* Yasma Product section */}
-        <div className="md:p-4 p-4">
+        <div className="md:p-4 p-4 ">
           <h1 className="md:text-3xl md:font-bold font-semibold text-[14px] text-center md:mb-6 my-1">Latest Products</h1>
           <p className="text-grey-600 text-center md:w-7/12 mx-auto text-[10px] md:text-xl md:my-2 ">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...
@@ -190,19 +193,23 @@ const Home = () => {
               product.map((items, index) => (
                 <div key={index} className="bg-white rounded-md shadow-lg overflow-hidden px-2 py-2 border">
                   <img src={items.imageUrl} className="rounded-t-md h-[280px] md:h-[400px] w-full object-cover  " alt={items.title} />
-                  <div className="p-4">
-                    <h1 className="font-semibold text-md">{items.title}</h1>
-                    <p className="text-grey-600">{items.description.slice(0, 20)}...</p>
-                    <div className="flex gap-3 mt-2">
+{/* product ko detail component ko lagi */}
+<div className='my-2 hover:bg-slate-200  hover:bg-opacity-70'>
+                <button onClick={()=>ProductDetail(items)}>
+                    <h1 className="font-semibold text-md text-left">{items.title}</h1>
+                    <p className="text-grey-600 text-left">{items.description.slice(0, 20)}...</p>
+
+                    <div className="flex gap-3 mt-2 ">
                       <label className='font-bold'>${items.price - (items.price * items.discount) / 100}</label>
                       <del className="font-semibold text-red-400">${items.price}</del>
                       <label className="text-grey-600">({items.discount}% off)</label>
                     </div>
+                </button>
+              </div> 
                     <button onClick={handleBuyNow}
-                      className="w-full bg-green-500 rounded md:p-2 p-1 my-2 hover:bg-green-900 hover:text-white">Buy Now</button>
+                      className="w-full bg-green-500 rounded md:p-2 p-1 my-2 hover:bg-green-700 text-white">Buy Now</button>
                     <button onClick={() => addToCart(items)}
-                      className="w-full bg-orange-500 rounded md:p-2 p-1 mt-2 hover:bg-orange-900 hover:text-white">Add to Cart</button>
-                  </div>
+                      className="w-full bg-orange-500 rounded md:p-2 p-1 mt-2 hover:bg-orange-700 text-white">Add to Cart</button>
                 </div>
               ))
             }

@@ -22,7 +22,7 @@ const NavLayout = ({ children }) => {
         { label: 'Category', href: '/category' },
         { label: 'Product', href: '/product' },
         { label: 'Contact Us', href: '/contact' },
-     
+
 
     ]
     const asidemenus = [
@@ -31,8 +31,8 @@ const NavLayout = ({ children }) => {
         { label: 'Product', href: '/product' },
         { label: 'Payment', href: '/payment' },
         { label: 'Contact Us', href: '/contact' },
-        {label:'Profile', href:'/profile'},
-        {label:'Cart',href:'/cart'},
+        { label: 'Profile', href: '/profile' },
+        { label: 'Cart', href: '/cart' },
         // {label:'Login',href:'/login'},
         // {label:'SignUp' ,href:'/signup'},
 
@@ -42,9 +42,9 @@ const NavLayout = ({ children }) => {
     const mobileLink = (href) => {
         navigate(href)
         setOpen(false)
-       
+
     }
-// yati alredy signin xa vane yo conditon use gareko ho for user ko lagi
+    // yati alredy signin xa vane yo conditon use gareko ho for user ko lagi
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -63,7 +63,7 @@ const NavLayout = ({ children }) => {
     // mobile ko lagi profile ko Full Name and email dekhauna ko lagi
 
     const [userName, setUserName] = useState('');
-    const [emailid,setEmailId] = useState('')
+    const [emailid, setEmailId] = useState('')
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -105,7 +105,7 @@ const NavLayout = ({ children }) => {
                         />
                     </div>
 
-                    <button onClick={()=>setOpen(!open)}>
+                    <button onClick={() => setOpen(!open)}>
                         <IoMdMenu className='text-xl md:hidden' />
                     </button>
 
@@ -134,10 +134,10 @@ const NavLayout = ({ children }) => {
                         {
                             session && (
                                 <button className="relative" onClick={() => setAccountMenu(!accountMenu)}>
-                                    <img src="/images/avat1.jpg" className="w-10 h-10 rounded-full" alt=''/>
+                                    <img src="/images/avat1.jpg" className="w-10 h-10 rounded-full" alt='' />
                                     {accountMenu && (
                                         <div className=" flex flex-col w-[120px]  bg-slate-200 fixed top-23 right-24 shadow-1xl z-50">
-                                        {/* LogOUt Box */}
+                                            {/* LogOUt Box */}
                                             <div className='flex gap-2 m-2'>
                                                 <ImProfile className='mt-1' />
                                                 <Link to="/profile" className='text-black hover:bg-gray-500'>
@@ -151,7 +151,7 @@ const NavLayout = ({ children }) => {
                                             </div>
                                             <div className='flex gap-2 m-2 hover:bg-gray-500'>
                                                 <IoMdLogOut className='mt-1' />
-                                                <Link to="#" onClick={()=>signOut(auth)} className='text-black'>
+                                                <Link to="#" onClick={() => signOut(auth)} className='text-black'>
                                                     Logout          </Link>
                                             </div>
                                         </div>
@@ -169,10 +169,10 @@ const NavLayout = ({ children }) => {
                 {children}
             </div>
 
-{/* footer ko lagi */}
+            {/* footer ko lagi */}
 
-{/* Desktop ko footer responsive/// */}
-<footer className='bg-slate-300 md:py-16 py-8  hidden md:block'>
+            {/* Desktop ko footer responsive/// */}
+            <footer className='bg-slate-300 md:py-16 py-8  hidden md:block'>
                 <div className='md:w-10/12 md:mx-auto grid md:grid-cols-4 grid-cols-1 text-black md:gap-4 gap-3 mx-3'>
                     <div>
                         <h1 className='text-black font-semibold md:text-2xl text-[14px] md:mb-3 mb-2'>Brand Details</h1>
@@ -192,27 +192,27 @@ const NavLayout = ({ children }) => {
                         <h1 className='text-black font-semibold md:text-2xl text-[14px] mb-2'>Website Links</h1>
                         <ul className=' gap-y-2 flex flex-col items-start   '>
                             {menus.map((item, index) => (
-                                <li key={index} className="inline-block hover:bg-stone-500  rounded py-1 hover:px-2 hover:text-white">
-                                    <Link 
-                                    to={item.href}>{item.label}</Link>
+                                <li key={index} className=" py-1 hover:font-bold">
+                                    <Link
+                                        to={item.href}>{item.label}</Link>
                                 </li>
                             ))}
-                           <div className='space-y-4 mt-1'>
-                           <li className='hover:bg-stone-500 hover:px-2 rounded hover:text-white ' ><Link to={'/login'}>Login</Link></li>
-                           <li className='hover:bg-stone-500 hover:px-2 rounded hover:text-white  '><Link to={'navlayout/signup'}>SignUp</Link></li>
-                           </div>
+                            <div className='space-y-4 mt-1'>
+                                <li className='hover:font-bold  ' ><Link to={'/login'}>Login</Link></li>
+                                <li className='hover:font-bold   '><Link to={'navlayout/signup'}>SignUp</Link></li>
+                            </div>
                         </ul>
                     </div>
 
                     <div >
                         <h1 className='text-black font-semibold md:text-2xl text-[14px] md:mb-3 mb-2 '>Follow Us</h1>
                         <ul className='md:space-y-2 gap-y-2  flex flex-col '>
-                            <li className='hover:text-white hover:bg-stone-500  rounded  '><Link to={'/login'}>Facebook</Link></li>
-                            <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>Instagram</Link></li>
-                            <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>LinkedIn</Link></li>
-                            <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>YouTube</Link></li>
-                            <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>WhatsApp</Link></li>
-                            <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>TwiterApp</Link></li>
+                            <li className='hover:font-bold  '><Link to={'/https://www.facebook.com/'} target='_blank'>Facebook</Link></li>
+                            <li className='hover:font-bold'><Link to={'/https://www.linkedin.com/in/mahesh-wod-94aa37342/'} target='_blank'>LinkedIn</Link></li>
+                            <li className='hover:font-bold'><Link to={'/https://www.instagram.com/'} target='_blank'>Instagram</Link></li>
+                            <li className='hover:font-bold'><Link to={'/https://www.youtube.com/'} target='_blank'>YouTube</Link></li>
+                            <li className='hover:font-bold'><Link to={'/https://web.whatsapp.com/'} target='_blank'>WhatsApp</Link></li>
+                            <li className='hover:font-bold'><Link to={'/https://github.com/maheshwod'} target="_blank">Github</Link></li>
                         </ul>
                     </div>
 
@@ -246,10 +246,10 @@ const NavLayout = ({ children }) => {
                         </div>
                     </div>
                 </div>
-      <hr className=" border-t-2 mt-8 border-black   mx-20" />
+                <hr className=" border-t-2 mt-8 border-black   mx-20" />
             </footer>
 
-{/* mobile lo lagi footer for responsive/// */}
+            {/* mobile lo lagi footer for responsive/// */}
             <footer className='bg-slate-300 md:py-16 py-8 block md:hidden '>
                 <div className='md:w-10/12 md:mx-auto grid md:grid-cols-4 grid-cols-1 text-black md:gap-4 gap-3 mx-3'>
                     <div>
@@ -265,35 +265,35 @@ const NavLayout = ({ children }) => {
                             />
                         </div>
                     </div>
-                   <div className='flex flex-col-2 gap-2 justify-between'>
-                   <div className='flex flex-col'>
-                        <h1 className='text-black font-semibold md:text-2xl text-[18px] mb-1'>Website Links</h1>
-                        <ul className=' gap-y-[0px] flex flex-col items-start   '>
-                            {menus.map((item, index) => (
-                                <li key={index} className="inline-block hover:bg-stone-500  rounded py-1 hover:px-2 hover:text-white">
-                                    <Link 
-                                    to={item.href}>{item.label}</Link>
-                                </li>
-                            ))}
-                           <div className='space-y-2 mt-1'>
-                           <li className='hover:bg-stone-500 hover:px-2 rounded hover:text-white ' ><Link to={'/login'}>Login</Link></li>
-                           <li className='hover:bg-stone-500 hover:px-2 rounded hover:text-white  '><Link to={'navlayout/signup'}>SignUp</Link></li>
-                           </div>
-                        </ul>
-                    </div>
+                    <div className='flex flex-col-2 gap-2 justify-between'>
+                        <div className='flex flex-col'>
+                            <h1 className='text-black font-semibold md:text-2xl text-[18px] mb-1'>Website Links</h1>
+                            <ul className=' gap-y-[0px] flex flex-col items-start   '>
+                                {menus.map((item, index) => (
+                                    <li key={index} className="inline-block hover:bg-stone-500  rounded py-1 hover:px-2 hover:text-white">
+                                        <Link
+                                            to={item.href}>{item.label}</Link>
+                                    </li>
+                                ))}
+                                <div className='space-y-2 mt-1'>
+                                    <li className='hover:bg-stone-500 hover:px-2 rounded hover:text-white ' ><Link to={'/login'}>Login</Link></li>
+                                    <li className='hover:bg-stone-500 hover:px-2 rounded hover:text-white  '><Link to={'navlayout/signup'}>SignUp</Link></li>
+                                </div>
+                            </ul>
+                        </div>
 
-                    <div>
-                        <h1 className='text-black font-semibold md:text-2xl text-[18px] md:mb-3 mb-2 '>Follow Us</h1>
-                        <ul className=' gap-y-2  flex flex-col '>
-                            <li className='hover:text-white hover:bg-stone-500  rounded  '><Link to={'/login'}>Facebook</Link></li>
-                            <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>Instagram</Link></li>
-                            <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>LinkedIn</Link></li>
-                            <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>YouTube</Link></li>
-                            <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>WhatsApp</Link></li>
-                            <li className='hover:text-white hover:bg-stone-500 rounded'><Link to={'/login'}>TwiterApp</Link></li>
-                        </ul>
+                        <div>
+                            <h1 className='text-black font-semibold md:text-2xl text-[18px] md:mb-3 mb-2 '>Follow Us</h1>
+                            <ul className=' gap-y-2  flex flex-col '>
+                                <li className='hover:font-bold  '><Link to={'/https://www.facebook.com/'} target='_blank'>Facebook</Link></li>
+                                <li className='hover:font-bold'><Link to={'/https://www.linkedin.com/in/mahesh-wod-94aa37342/'} target='_blank'>LinkedIn</Link></li>
+                                <li className='hover:font-bold'><Link to={'/https://www.instagram.com/'} target='_blank'>Instagram</Link></li>
+                                <li className='hover:font-bold'><Link to={'/https://www.youtube.com/'} target='_blank'>YouTube</Link></li>
+                                <li className='hover:font-bold'><Link to={'/https://web.whatsapp.com/'} target='_blank'>WhatsApp</Link></li>
+                                <li className='hover:font-bold'><Link to={'/https://github.com/maheshwod'} target="_blank">Github</Link></li>
+                            </ul>
+                        </div>
                     </div>
-                   </div>
 
                     <div>
                         <h1 className='font-semibold md:text-2xl text-[18px] md:mb-3 mb-2 text-black'>Contact Us</h1>
@@ -326,15 +326,15 @@ const NavLayout = ({ children }) => {
                     </div>
                 </div>
             </footer>
-         
-{/* mobile ko lagi aside bar */}
-{/* { open &&  */}
-    <aside
-                className='overflow-hidden md:hidden  h-full  fixed top-0 left-0 shadow-lg bg-neutral-600 z-50'
-                style={{ width: open ? 230 : 0 , transition: '0.3s' }}
+
+            {/* mobile ko lagi aside bar */}
+            {/* { open &&  */}
+            <aside
+                className='overflow-hidden md:hidden  h-full  fixed top-0 left-0 shadow-lg bg-neutral-600 z-100'
+                style={{ width: open ? 200 : 0, transition: '0.3s' }}
             >
                 <div className='flex flex-col gap-4 mt-1'>
-                
+
                     {asidemenus.map((item, index) => (
                         <button
                             key={index}
@@ -342,47 +342,47 @@ const NavLayout = ({ children }) => {
                             className=' p-2 text-white hover:bg-red-500'
                         >
                             {item.label}
-                            
+
                         </button>
-                        
+
                     ))}
-                 
-                   
-                           { !session ? <>
-                                <Link to={'/login'}
-                                    // className='block py-4 rounded-sm text-center hover:bg-rose-400 hover:text-white w-[100px] my-2'
-                                ><span className='text-white hover:bg-red-500 ml-[85px] rounded p-2 '>Login</span></Link>
-                                <Link to={'/signup'}
-                                    // className='bg-blue-300 px-8 py-3 font-bold rounded block text-center hover:bg-rose-400 hover:text-white my-2'
-                                ><span className='text-white hover:bg-red-500 ml-[85px] rounded p-2'>SignUp</span></Link>
-                                
-                            </>
-                            : <div className='flex gap-1 hover:bg-red-500 mx-auto p-2 rounded text-white '>
-                                                <IoMdLogOut className='mt-1' />
-                                                <Link to="#" onClick={()=>signOut(auth)} className='text-black'>
-                                                    <span className='text-white'>LogOut</span>          </Link>
-                                            </div>
 
 
-                           
-                        } 
+                    {!session ? <>
+                        <Link to={'/login'}
+                        // className='block py-4 rounded-sm text-center hover:bg-rose-400 hover:text-white w-[100px] my-2'
+                        ><span className='text-white hover:bg-red-500 ml-[85px] rounded p-2 '>Login</span></Link>
+                        <Link to={'/signup'}
+                        // className='bg-blue-300 px-8 py-3 font-bold rounded block text-center hover:bg-rose-400 hover:text-white my-2'
+                        ><span className='text-white hover:bg-red-500 ml-[85px] rounded p-2'>SignUp</span></Link>
 
-                        {/* profile ko name and email, image also dekhauna */}
+                    </>
+                        : <div className='flex gap-1 hover:bg-red-500 mx-auto p-2 rounded text-white '>
+                            <IoMdLogOut className='mt-1' />
+                            <Link to="#" onClick={() => signOut(auth)} className='text-black'>
+                                <span className='text-white'>LogOut</span>          </Link>
+                        </div>
+
+
+
+                    }
+
+                    {/* profile ko name and email, image also dekhauna */}
                     {
-                        session && 
+                        session &&
                         <div className='mx-auto h-[120px] flex flex-col justify-center items-center border border-xl rounded mt-2'>
-                        <h3>LogedIn User's</h3>
-                        <hr className='text-white '></hr>
+                            <h3>LogedIn User's</h3>
+                            <hr className='text-white '></hr>
                             {/* <div className='h-[40px] w-[40px] bg-slate-700 rounded-full justify-center items-center'><img src=''alt = ''/></div> */}
                             <h1 className='text-lg font-semibold'>{userName}</h1>
                             <p className='text-grey-500'> {emailid}</p>
                         </div>
                     }
                 </div>
-                
+
             </aside>
             {/* } */}
-            
+
 
         </>
     )

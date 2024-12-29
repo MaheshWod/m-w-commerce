@@ -14,6 +14,7 @@ import Failed from './Components/Failed';
 import Payment from './Admin/Payment';
 import Category from './Admin/Category';
 import Setting from './Admin/Setting';
+import ProductDetail from './Admin/ProductDetail';
 function App() {
   return (
     <BrowserRouter>
@@ -35,6 +36,7 @@ function App() {
         <Route path='/layout' element={<Layout />}>
         </Route>
         <Route path='/product' element={<Product />} />
+        <Route path='/product_detail' element={<ProductDetail />} />
         <Route path='/order' element={<Order />} />
         <Route  path='/category' element ={<Category/>}/>
         <Route  path='/payment' element ={<Payment/>}/>

@@ -174,7 +174,7 @@ const Layout = ({ children }) => {
 
             {/* mobile device ko lagi */}
 
-        <div className='block md:hidden'>
+        <div className='block md:hidden '>
         <aside
                 style={{
                     width: msize,
@@ -182,7 +182,7 @@ const Layout = ({ children }) => {
                 }}
 
                 className=' h-full fixed top-0 left-0 bg-neutral-500 overflow-hidden  '>
-                <div className='flex flex-col py-4'>
+                <div className='flex flex-col py-4 mx-4 gap-3'>
 
                     {menus.map((item, index) => (
                         <Link
@@ -213,7 +213,7 @@ const Layout = ({ children }) => {
                 <nav className='bg-white p-6 shadow flex items-center justify-between' >
                     <div className='flex gap-4 items-center' >
                         <button
-                            onClick={() => setMsize(msize === 0 ? 100 : 0)}
+                            onClick={() => setMsize(msize === 0 ? 120 : 0)}
                             className='bg-grey-60 hover:bg-indigo-500 hover:rounded hover:text-white'>
                             <IoMdMenu className='text-xl' />
                         </button>
